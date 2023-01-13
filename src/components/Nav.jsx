@@ -1,7 +1,7 @@
-import logo from "../assets/logo2.png";
+import logo from "../assets/logo3.png";
 const nav = () => {
   return (
-    <nav className="py-6">
+    <nav className="py-6 sm:py-4">
       <img
         src={logo}
         alt="Pretty Caption"

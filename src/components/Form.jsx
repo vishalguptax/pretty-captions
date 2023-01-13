@@ -5,7 +5,7 @@ import copyIcon from "../assets/copy.png";
 const Form = () => {
   const [userText, setUserText] = useState("");
   const [result, setResult] = useState("");
-  const [rhyme, setRhyme] = useState(false)
+  const [rhyme, setRhyme] = useState(false);
   const [loading, setLoading] = useState(false);
   const [copyText, setCopyText] = useState("Copy Caption");
   const handleSubmit = async (e) => {
@@ -28,9 +28,9 @@ const Form = () => {
   const handleShare = async () => {
     try {
       await navigator.share({
-        title: "MDN",
-        text: "Learn web development on MDN!",
-        url: "https://google.com",
+        title: "Pretty Captions",
+        text: "⚡ Generate cool captions for your posts using AI 🤩",
+        url: "https://p-captions.web.app",
       });
       resultPara.textContent = "MDN shared successfully";
     } catch (err) {
@@ -48,12 +48,13 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="userForm p-6 py-16 sm:py-6 flex w-full sm:w-5/6 lg:w-7/12 xl:w-2/5 flex-col justify-center items-center gap-14 sm:gap-8"
+      className="userForm px-3 py-8 sm:py-6 sm:px-8 flex w-full sm:w-5/6 lg:w-7/12 xl:w-2/5 flex-col justify-center items-center gap-8 sm:gap-8"
     >
-      <span className="text-md appInfo">
-        Generate amazing captions for your social media posts using AI
+      <span className="text-lg appInfo">
+        ⚡ Generate cool captions for your posts using AI 🤩
       </span>
       <input
+        disabled={loading}
         type="text"
         className="text-lg userInput px-1 py-4 w-full"
         value={userText}
@@ -62,17 +63,26 @@ const Form = () => {
         }}
         placeholder="Type your caption.."
       />
-      <div className="flex justify-around items-center w-full">
-        <span className="flex text-lg items-center gap-2">
-          <input type="checkbox" name="rhyme" id="rhyme" onChange={()=>setRhyme((current)=>!current)}/>
-          <label role={"button"} htmlFor="rhyme">Rhyming Caption</label>
+      <div className="flex justify-around sm:justify-around items-center w-full">
+        <span className="flex text-sm sm:text-lg items-center gap-1 sm:gap-2">
+          <label role={"button"} htmlFor="rhyme">
+            🎵 Rhyming
+          </label>
+          <input
+            disabled={loading}
+            type="checkbox"
+            name="rhyme"
+            id="rhyme"
+            onChange={() => setRhyme((current) => !current)}
+          />
         </span>
         <button
+          disabled={loading}
           type="submit"
-          className="subBtn w-1/2 text-xl"
+          className="subBtn w-1/2 text-base sm:text-xl py-2"
           onClick={handleSubmit}
         >
-          {loading ? "Generating Caption..." : "Prettify It"}
+          {loading ? "⏳ Doing It.." : "🌼 Prettify It"}
         </button>
       </div>
       {result !== "" && (
@@ -81,7 +91,7 @@ const Form = () => {
             onClick={(e) => {
               e.target.select();
             }}
-            className="result text-lg w-full p-4"
+            className="result text-base sm:text-lg w-full p-4"
           >
             {result}
           </span>

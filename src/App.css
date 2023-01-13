@@ -1,9 +1,8 @@
-.app{
-  height: 100vh;
-  position: relative;
+#root{
+  /* min-height: calc(100%-40px); */
+  /* padding-bottom: 40px; */
 }
 .appInfo {
-  /* width: 500px; */
   text-align: center;
 }
 
@@ -14,6 +13,7 @@
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 26px;
+  margin-bottom: 3rem;
 }
 
 .userInput {
@@ -22,7 +22,6 @@
   outline: none;
   border: none;
   border-radius: 26px;
-  /* width: 500px; */
   text-align: center;
   border: 5px solid #ffffff;
 }
@@ -42,7 +41,6 @@
   box-shadow: 20px 20px 60px #d8d1bb, -20px -20px 60px #fffffd;
   border: 5px solid #ffffff;
   border-radius: 26px;
-  padding: 0.8rem 0rem;
   font-weight: 700;
   color: #7d2e1e;
   font-size: 1.6rem;
@@ -57,13 +55,16 @@
 }
 
 footer {
-  position: fixed;
+  position: absolute;
+  left: 0;
   bottom: 0;
-  background-color: white;
-  width: 100%;
+  right: 0;
+  background-color: #fef6dc;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3rem 0;
+  height: 40px;
+  line-height: 40px;
   border-top: 5px solid #f1f1f1;
+  text-align: center;
 }
