@@ -1,5 +1,5 @@
 #root {
-  min-height: calc(100%-40px);
+  min-height: 100%;
   padding-bottom: 40px;
   position: relative;
 }
