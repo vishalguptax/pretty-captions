@@ -11,7 +11,7 @@ export const captionApi = async (userText, rhyme) => {
       model: "text-davinci-003",
       prompt: `create a ${rhyme ? "rhyming" : ""} for "${userText}." for social media`,
       // prompt:userText,
-      max_tokens: 200,
+      max_tokens: 100,
     });
     return completion.data.choices[0].text;
   } catch (error) {
