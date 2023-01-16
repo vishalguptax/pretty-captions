@@ -1,6 +1,7 @@
-#root{
-  /* min-height: calc(100%-40px); */
-  /* padding-bottom: 40px; */
+#root {
+  min-height: calc(100%-40px);
+  padding-bottom: 40px;
+  position: relative;
 }
 .appInfo {
   text-align: center;
@@ -65,6 +66,10 @@ footer {
   align-items: center;
   height: 40px;
   line-height: 40px;
-  border-top: 5px solid #f1f1f1;
+  border-top: 5px solid #fff;
   text-align: center;
+}
+
+footer > a:hover {
+  text-decoration: underline #0f172a;
 }
