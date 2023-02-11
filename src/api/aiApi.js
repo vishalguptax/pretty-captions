@@ -3,11 +3,11 @@ import axios from "axios";
 
 export const captionApi = async (userText, rhyme) => {
   try {
-    const { data } = await axios.post("https://pretty-captions.onrender.com/api", {
+    const res = await axios.post("http://localhost:8080/api", {
       userText,
       rhyme,
     });
-    return data;
+    return res;
   } catch (error) {
     console.log(error);
   }

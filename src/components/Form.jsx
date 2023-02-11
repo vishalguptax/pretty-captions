@@ -14,7 +14,8 @@ const Form = () => {
       setLoading(true);
       captionApi(userText, rhyme)
         .then((res) => {
-          setResult(res);
+          // console.log(res);
+          setResult(res?.data.data);
           setLoading(false);
         })
         .catch((error) => {
@@ -80,7 +81,9 @@ const Form = () => {
         <button
           disabled={loading}
           type="submit"
-          className={`${loading? "subLoading" : "subBtn"} w-1/2 text-base sm:text-xl py-2`}
+          className={`${
+            loading ? "subLoading" : "subBtn"
+          } w-1/2 text-base sm:text-xl py-2`}
           onClick={handleSubmit}
         >
           {loading ? "⏳ Doing It" : "🌼 Prettify It"}
