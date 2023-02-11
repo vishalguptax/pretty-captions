@@ -32,7 +32,7 @@ const Form = () => {
         text: "⚡ Generate cool captions for your posts using AI 🤩",
         url: "https://p-captions.web.app",
       });
-      resultPara.textContent = "MDN shared successfully";
+      resultPara.textContent = "Shared successfully";
     } catch (err) {
       resultPara.textContent = `Error: ${err}`;
     }
@@ -69,6 +69,7 @@ const Form = () => {
             🎵 Rhyming
           </label>
           <input
+            role={"button"}
             disabled={loading}
             type="checkbox"
             name="rhyme"
@@ -79,10 +80,10 @@ const Form = () => {
         <button
           disabled={loading}
           type="submit"
-          className="subBtn w-1/2 text-base sm:text-xl py-2"
+          className={`${loading? "subLoading" : "subBtn"} w-1/2 text-base sm:text-xl py-2`}
           onClick={handleSubmit}
         >
-          {loading ? "⏳ Doing It.." : "🌼 Prettify It"}
+          {loading ? "⏳ Doing It" : "🌼 Prettify It"}
         </button>
       </div>
       {result !== "" && (

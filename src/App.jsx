@@ -1,9 +1,12 @@
 import "./App.css";
 import { Form, Nav } from "./components";
-
+import './components/stars.css'
 function App() {
   return (
     <>
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
       <div className="App flex items-center flex-col px-4">
         <Nav />
         <Form />

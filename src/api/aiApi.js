@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
@@ -7,20 +8,12 @@ const openai = new OpenAIApi(configuration);
 
 export const captionApi = async (userText, rhyme) => {
   try {
-    const completion = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: `create a ${rhyme ? "rhyming" : ""} for "${userText}." for social media`,
-      // prompt:userText,
-      max_tokens: 100,
+    const { data } = axios.post("http://localhost:8080/api", {
+      userText,
+      rhyme,
     });
-    return completion.data.choices[0].text;
+    return data;
   } catch (error) {
-    if (error.response) {
-      console.log(error.response.status);
-      console.log(error.response.data);
-    } else {
-      console.log(error.message);
-    }
-    return error;
+    console.log(error);
   }
 };

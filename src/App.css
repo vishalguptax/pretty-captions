@@ -1,8 +1,3 @@
-#root {
-  min-height: 100%;
-  padding-bottom: 40px;
-  position: relative;
-}
 .appInfo {
   text-align: center;
 }
@@ -37,7 +32,8 @@
   border: 5px solid #ffffff;
 }
 
-.subBtn {
+.subBtn,
+.subLoading {
   background: #fef6dc !important;
   box-shadow: 20px 20px 60px #d8d1bb, -20px -20px 60px #fffffd;
   border: 5px solid #ffffff;
@@ -49,10 +45,34 @@
   transition: all 400ms ease;
 }
 
-.subBtn:hover {
+.subBtn:hover,
+.subLoading:hover {
   background: #fff !important;
   border: 5px solid #fef6dc;
   letter-spacing: 0.025em;
+}
+
+
+.subLoading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+  -webkit-animation: ellipsis steps(4, end) 900ms infinite;
+  animation: ellipsis steps(4, end) 900ms infinite;
+  content: "\2026"; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
+}
+
+@-webkit-keyframes ellipsis {
+  to {
+    width: 1.25em;
+  }
 }
 
 footer {
@@ -73,3 +93,5 @@ footer {
 footer > a:hover {
   text-decoration: underline #0f172a;
 }
+
+
