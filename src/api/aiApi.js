@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const captionApi = async (userText, rhyme) => {
   try {
-    const { data } = axios.post("http://localhost:8080/api", {
+    const { data } = axios.post("https://pretty-captions.onrender.com/api", {
       userText,
       rhyme,
     });
